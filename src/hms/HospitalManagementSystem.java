@@ -14,7 +14,7 @@ public class HospitalManagementSystem {
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBounds(0,0,1366, 768);
-        frame.add(new ReceptionInterface());
+        frame.add(new AdminGUI());
         frame.setResizable(false);
         frame.setVisible(true);
     }

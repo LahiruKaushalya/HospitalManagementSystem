@@ -5,17 +5,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
-public class DoctorHandler {
+public class ServiceCharge {
     
-    public ResultSet getDoctorsList(int date, int cate){
+    public ResultSet getServiceCharges(){
         ResultSet result = null; 
         try {
-            PreparedStatement state = ConnectionHandler.conToDB().prepareStatement("SELECT name FROM doctor WHERE category = '" +cate+ "'");
+            PreparedStatement state = ConnectionHandler.conToDB().prepareStatement("SELECT service,cost FROM chargers");
             result = state.executeQuery();
             
         } catch (SQLException ex) {
         }
         return result;
     }
+    
     
 }

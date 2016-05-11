@@ -282,6 +282,8 @@ public class LoginPageGUI extends javax.swing.JPanel {
                 password.setText("");
             }else if(employee.equals("reception")){
                 HospitalManagementSystem.update(this ,new ReceptionInterface());
+            }else if(employee.equals("admin")){
+                HospitalManagementSystem.update(this ,new AdminGUI());
             }
         }
     }//GEN-LAST:event_loginActionPerformed

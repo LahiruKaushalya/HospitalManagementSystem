@@ -1,14 +1,40 @@
 
 package hms;
 
-public class Admin extends Person{
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-    public Admin(String nic, int age, String name) {
-        super(nic, age, name);
+public class Admin {
+    
+    public ResultSet viewDoctorDetails(){
+        ResultSet result = null; 
+        try {
+            PreparedStatement state = ConnectionHandler.conToDB().prepareStatement("SELECT name FROM doctor");
+            result = state.executeQuery();
+        } catch (SQLException | NullPointerException ex) {
+        }
+        return result;
     }
     
-    public void viewTables(){
-        
+    public ResultSet viewPatientDetails(){
+        ResultSet result = null; 
+        try {
+            PreparedStatement state = ConnectionHandler.conToDB().prepareStatement("SELECT name FROM patient");
+            result = state.executeQuery();
+        } catch (SQLException | NullPointerException ex) {
+        }
+        return result;
+    
+    }
+    public ResultSet viewEmployeeDetails(){
+        ResultSet result = null; 
+        try {
+            PreparedStatement state = ConnectionHandler.conToDB().prepareStatement("SELECT name FROM employee");
+            result = state.executeQuery();
+        } catch (SQLException | NullPointerException ex) {
+        }
+        return result;
     }
     
 }
